@@ -5,11 +5,11 @@ int read_result;
 uint8_t byteNumMouse = 0, bytes[3];
 
 void(set_packet)() {
-  uint16_t delta_x = bytes[1];
+  int16_t delta_x = bytes[1];
   if ((bytes[0] & BIT(4)) == BIT(4)) {
     delta_x = delta_x | BIT(8);
   }
-  uint16_t delta_y = bytes[2];
+  int16_t delta_y = bytes[2];
   if ((bytes[0] & BIT(5)) == BIT(5)) {
     delta_y = delta_y | BIT(8);
   }
