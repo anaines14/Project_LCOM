@@ -1,0 +1,38 @@
+Turma 4
+Grupo 6
+
+Membros:
+Ana Inês Oliveira de Barros
+201806593
+João Alexandre Lobo Cardoso
+201806531
+
+Nome projeto: Hit or miss 
+Descrição:
+  Jogo com perspetiva top-down(vista de cima). Enimigos aparecem de fora do ecra e movem-se para o centro. O player tem que impedir com a ajuda de misséis que os enimigos cheguem ao centro para não perder o jogo.
+Classficação alvo:
+
+Timer
+Role: Medir intrevalos tempo para mover os enimigos/mísseis no ecrã.
+Functionality: Interrupções
+
+Keyboard
+Role: Escolher tipo de mísseis.
+Functionality: Interrupções
+
+Video Card
+Role: Mostrar a posição dos enimigos, dos misséis e do centro do ecrã.
+Functinality: ????
+
+Rato
+Role: Representa o cursor do jogador e os botões permitem lançar os mísseis.
+Functionality: Interrupções
+
+RTC
+Role: 
+Functinality:
+
+Serial Port
+Role: 
+Functionlality: 
+
