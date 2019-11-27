@@ -2,13 +2,17 @@
 #include "sprites.h"
 
 //static uint32_t ignoreColor = 0xFF0080;
-Sprite *(create_sprite)(const char *pic[], int x, int y,int xspeed, int yspeed) {
+
+
+Sprite *(create_sprite)(const char *pic[], int x, int y,int xspeed, int yspeed) {
 	//allocate space for the "object"
 	Sprite *sp = (Sprite *)malloc(sizeof(Sprite));
 	xpm_image_t img;
 	if (sp == NULL)
 		return NULL;
 	// read the sprite pixmap
+	printf(":)");
+	return sp;
 	sp->map = xpm_load(pic, XPM_8_8_8_8, &img);
 	if (sp->map == NULL) {
 		free(sp);
@@ -17,7 +21,7 @@
 	sp->width = img.width;
 	sp->height = img.height;
 	sp->map = img.bytes;
-
+	
 	sp->xspeed = xspeed;
 	sp->yspeed = yspeed;
 	return sp;
@@ -31,7 +35,8 @@ void (destroy_sprite)(Sprite *sp) {
 	free(sp);
 	sp = NULL; // XXX: pointer is passed by value
 	// should do this @ the caller
-}
+}
+
 int (draw_sprite)(Sprite *sp, char *base){
 	if (sp == NULL) {
 		return 1;
@@ -48,7 +53,7 @@ int (draw_sprite)(Sprite *sp, char *base){
 	int endx = minInt(sp->width, H_RES - x);
 	for (int i = 0; i < endy; i++) {
 
-		pointer = base + ((((i + y) * H_RES) + x) * 4); //A posição de y * length do ecrã + a posição x, tudo * bits_por_pixel do ecra
+		pointer = base + ((((i + y) * H_RES) + x) * 4); //A posiï¿½ï¿½o de y * length do ecrï¿½ + a posiï¿½ï¿½o x, tudo * bits_por_pixel do ecra
 		for (int j = 0; j < endx; j++) {
 
 			//Making the color
@@ -60,7 +65,7 @@ int (draw_sprite)(Sprite *sp, char *base){
 			//Setting the color unless it is the specified ignore color
 			if (!(color[2] == 0xff && color[1] == 0x00 && color[0] == 0x80)) {
 			//if(true){
-				pointer++; //Passar à frente o transparente
+				pointer++; //Passar ï¿½ frente o transparente
 				for (int l = 0; l < 3; l++) {
 					*pointer = color[l];
 					pointer++;

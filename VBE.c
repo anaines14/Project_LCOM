@@ -1,5 +1,6 @@
 #include "VBE.h"
 #include <lcom/lcf.h>
+
 void *video_mem; /* frame-buffer VM address */
 static uint16_t h_res;
 static uint16_t v_res;
@@ -27,17 +28,15 @@ void draw_xpm(uint16_t x, uint16_t y, enum xpm_image_type type, xpm_image_t img)
 	if(y + img.height < v_res)
 		lim_y = y + img.height;
 	
-
-	
 	for(uint16_t i = y; i < lim_y; i++){
 	  aux += (x + i * h_res) * (Bps);
 	  for(uint16_t j = x; j < lim_x; j++){
-		counter = 0;
-		while(counter != (Bps)){
+		  counter = 0;
+		  while(counter != (Bps)){
 	
 	   	  //aux = img.bytes[((i-x) + (j-y) * img.width)*(Bps) + counter];
 	      counter++;
-		}
+		  }
 	  }
 	}
 	
@@ -82,7 +81,7 @@ int define_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t
 		
 	  colour = red + blue + green;
 	
-	  for (int y = rec_y; y < rec_y + height_each_rectangle; y++) { //Para cada linha do retângulo
+	  for (int y = rec_y; y < rec_y + height_each_rectangle; y++) { //Para cada linha do retï¿½ngulo
         vg_draw_hline(rec_x, y, width_each_rectangle, colour);
 	  }
 
@@ -98,15 +97,13 @@ int define_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t
 
 int (setGraphicsMode)(uint16_t mode) {
   graphics_mode = mode;
-  /*
+
   //Initialize first MB of memory
   mmap_t map;
   map.phys = 0;
   map.size = 1024 * 1024;
   lm_alloc(1024 * 1024, &map);
 
-  */
-  //
   vbe_mode_info_t t;
   vbe_get_mode_info(mode, &t);
   
@@ -121,7 +118,7 @@ int (setGraphicsMode)(uint16_t mode) {
   BlueFieldPosition = t.BlueFieldPosition;
   MemoryModel = t.MemoryModel;
   
-  unsigned int vram_base; /* VRAM’s physical addresss */
+  unsigned int vram_base; /* VRAMï¿½s physical addresss */
   vram_base = (unsigned int) t.PhysBasePtr;
 
   int sum = 0;
@@ -132,13 +129,13 @@ int (setGraphicsMode)(uint16_t mode) {
 
   int res;
   struct minix_mem_range mr; /* physical memory range */
-  unsigned int vram_size = h_res * v_res * ((bits_per_pixel / 8) + sum); /* VRAM’s size, but you can use
+  unsigned int vram_size = h_res * v_res * ((bits_per_pixel / 8) + sum); /* VRAMï¿½s size, but you can use
   the frame-buffer size, instead */
   
   /* Allow memory mapping */
   mr.mr_base = (phys_bytes) vram_base;
   mr.mr_limit = mr.mr_base + vram_size;
-  if (OK != (res = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) //Pedir autorização para aceder aos registos
+  if (OK != (res = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) //Pedir autorizaï¿½ï¿½o para aceder aos registos
     panic("sys_privctl (ADD_MEM) failed: %d\n", res);
   /* Map memory */
   video_mem = vm_map_phys(SELF, (void *) mr.mr_base, vram_size); //Onde se pode mudar as cores dos pixeis
@@ -218,37 +215,13 @@ int(draw_hline)(uint16_t x, uint16_t y, uint16_t width, uint32_t color) {
     }
   }
   else if (bits_per_pixel <= 24) {
-    
-  //Imaginando que a cor é 23abf3
-  //uint8_t color1 = (uint8_t) ((color >> 16) % BIT(8)); //23
-  //uint8_t color2 = (uint8_t) ((color >> 8) % BIT(8)); //ab
-  //uint8_t color3 = (uint8_t)((color) % BIT(8)); //f3
-  //uint8_t arr[3] = {color1, color2, color3};
-  uint8_t *current_point = video_mem;
-  current_point += (x + y * h_res) * Bps;
+    uint8_t *current_point = video_mem;
+    current_point += (x + y * h_res) * Bps;
   //int count = 16;
-  for (unsigned i = x; i < endOfLine; i++) {
-
-	/*
-    *current_point = arr[2];
-    current_point++;
-    *current_point = arr[1];
-    current_point++;
-    *current_point = arr[0];
-    current_point++;
-	*/
-    /*
-    *current_point = ((color >> (16)) % BIT(8));
-    current_point++;
-    *current_point = ((color >> (8)) % BIT(8));
-    current_point++;
-    *current_point = ((color >> (0)) % BIT(8));
-    current_point++;
-	*/
-	
-    set_pixel(color, current_point, Bps);
-    current_point += 3;
-	}
+    for (unsigned i = x; i < endOfLine; i++) {
+      set_pixel(color, current_point, Bps);
+      current_point += 3;
+	  }
   }
 
   else if (bits_per_pixel <= 32) {

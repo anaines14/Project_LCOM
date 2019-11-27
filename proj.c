@@ -6,9 +6,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "proj.h"
-
 // Any header files included below this line should have been created by you
+#include "proj.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -53,8 +52,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
   bool const minix3_logo = true;
   bool const grayscale = false;
   uint8_t const delay = 5;
-  uint16_t mode;
-  */
+  uint16_t mode;*/
+
   if (argc != 1)
     return print_usage();
 

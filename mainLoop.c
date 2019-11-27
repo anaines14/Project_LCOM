@@ -10,9 +10,6 @@
 #include "images.h"
 #include "sprites.h"
 
-
-
-
 //GLOBAL KEYBOARD VARIABLES
 extern uint8_t status_byte, cmd, data, msB, lsB;
 extern bool success;
@@ -30,21 +27,15 @@ extern uint16_t x_percorrido;
 extern void *video_mem;
 const int screenx = 1152;
 const int screeny = 864;
-//extern struct Sprite;
-
 
 int (game_start)() {
-
-
 	return interrupts();
 }
-
 
 
 int (interrupts)() {
 	int x_mouse = screenx / 2;
 	int y_mouse = screeny / 2;
-
 
 	int ipc_status, r;
 	message msg;
@@ -56,6 +47,7 @@ int (interrupts)() {
 	uint8_t size,
 		oneByteSc[] = { 0 },     /*Array for scancode of 1byte long*/
 		twoBytesSc[] = { 0, 0 }; /*Array for scancode of 2byte long*/
+	
 	bool make = true, read_lsb = false;
 
 	//Timer
@@ -78,23 +70,15 @@ int (interrupts)() {
 		return 1;
 	if (mouse_subscribe_int(&hook_id_mouse))
 		return 1;
+
 	//Setting graphics mode to 14C
-	setGraphicsMode(0x14C);
+	setGraphicsMode(0x11B);
 
-	//DEBUG
-	//int counter = 0;
-
-	//char *fly_up_1 = flyUp1;
 	Sprite fly;
 	fly = *create_sprite(flyUp1, 32, 32, 0, 0);
 	draw_sprite(&fly, video_mem);
 
-	//xpm_row_t const flyGoingUp[] = flyUp;
-
-	//Sprite sp;
-
-
-	while (lsB != 0x81 || msB != 0)
+	while ((lsB != ESC_BRKCD) || (msB != 0))
 	{
 		if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0)
 		{
@@ -105,18 +89,10 @@ int (interrupts)() {
 		{ /* received notification */
 			switch (_ENDPOINT_P(msg.m_source))
 			{
-			case HARDWARE:                                /* hardware _cou notification */
+			case HARDWARE: /* hardware _cou notification */
 				if (msg.m_notify.interrupts & irq_timer0) //TIMER0
 				{
-					//Debug
-					/*
-					counter++;
-					//timer_int_handler();
-					if (!(counter % 20)) {
-						printf("X position: %d\n", x_mouse);
-						printf("Y position: %d\n", y_mouse);
-					}
-					*/
+					
 				}
 				if (msg.m_notify.interrupts & irq_kbd) //KEYBOARD
 				{
@@ -165,7 +141,7 @@ int (interrupts)() {
 						byteNumMouse = 0;
 						set_packet();
 					}
-					//Fazer coisas com o kbd
+					//Se rato sair fora do ecra
 					if ((pp.delta_x >> 2) + x_mouse > screenx)
 						x_mouse = screenx;
 					else if ((pp.delta_x >> 2) + x_mouse <= 0)
@@ -201,7 +177,5 @@ int (interrupts)() {
     if (vg_exit())
 		return 1;
 
-
 	return 0;
-
 }

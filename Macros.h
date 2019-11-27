@@ -35,6 +35,7 @@
 //Makecode/Breakcode
 #define MB BIT(7) //1 - breakcode 0 - makecode
 #define MSB_2B 0xE0
+#define ESC_BRKCD 0x81
 
 
 //--Other--
@@ -45,9 +46,6 @@
 #define H_RES 1152
 #define V_RES 864
 
-
-
-
 //XPM
-#define XPM_BYTES_PER_PIXEL 4
-
+#define XPM_BYTES_PER_PIXEL 3
+#define SYSTEM_BYTES_PER_PIXEL 3
