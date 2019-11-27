@@ -38,6 +38,11 @@
 #define MSB_2B 0xE0
 #define ESC_BRKCD 0x81
 
+//Timer
+#define TIMER_0 0x40
+#define TIMER_FREQ 1193182              
+#define TIMER_LSB_MSB (TIMER_LSB | TIMER_MSB)
+
 //Screen size
 #define H_RES 1280
 #define V_RES 1024
