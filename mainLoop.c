@@ -9,6 +9,7 @@
 #include "utils.h"
 #include "images.h"
 #include "sprites.h"
+#include "enimies.h"
 
 //GLOBAL KEYBOARD VARIABLES
 extern uint8_t msB, lsB;
@@ -73,9 +74,23 @@ int (interrupts)() {
 	//Setting graphics mode to 14C	
 	setGraphicsMode(MODE);
 
-	Sprite *fly;
-	fly = create_sprite(flyUp1, 32, 32, 0, 0);
-	draw_sprite(fly, video_mem);
+	
+	
+	//Creating a memory buffer
+	char *memBuffer = (char *)malloc(H_RES * V_RES * SYSTEM_BYTES_PER_PIXEL * sizeof(uint8_t));
+	
+
+	//Sprite *background;
+	Sprite *bg = create_sprite(background, 0, 0, 0, 0);
+	draw_sprite(bg, memBuffer);
+
+
+	Sprite *flyspr;
+	flyspr = create_sprite(flyUp1, 32, 32, 0, 1);
+	draw_sprite(flyspr, memBuffer);
+	//Enemy *fly = setEnemy(flyspr, 180, 0);
+
+
 
 	while ((lsB != ESC_BRKCD) || (msB != 0))
 	{
@@ -91,7 +106,16 @@ int (interrupts)() {
 			case HARDWARE: /* hardware _cou notification */
 				if (msg.m_notify.interrupts & irq_timer0) //TIMER0
 				{
+					draw_sprite(bg, memBuffer);
+					draw_sprite(flyspr, memBuffer);
+					memcpy(video_mem, memBuffer,H_RES * V_RES * SYSTEM_BYTES_PER_PIXEL * sizeof(uint8_t));
+					//Mover os objetos
+					flyspr->x += flyspr->xspeed;
+					flyspr->y += flyspr->yspeed;
+					//Draw sprites, in order of priority
 					
+
+
 				}
 				if (msg.m_notify.interrupts & irq_kbd) //KEYBOARD
 				{
@@ -123,6 +147,8 @@ int (interrupts)() {
 						size = 1;
 						oneByteSc[0] = lsB;
 					}
+
+
 				}
 
 				if (msg.m_notify.interrupts & irq_mouse) //Mouse

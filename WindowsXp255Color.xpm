@@ -1,75 +1,5 @@
-#pragma once
-#include <lcom/lcf.h>
-#include <lcom/xpm.h>
-
-//static xpm_row_t const flyUp1[] = {
-static const char * flyUp1[] = {
-	"32 32 5 1",
-" 	c #FF0080",
-".	c #000000",
-"+	c #8F2138",
-"@	c #8F8121",
-"#	c #8F8F8F",
-"         .....                  ",
-"         .+++..  ....           ",
-"         .+++..  .+++.          ",
-"         .........+++.          ",
-"         ..@@@@@@..+..          ",
-"         .@@@@@@@@..            ",
-"         .@@@@@@@@@.            ",
-"          .@@@@@@@@.            ",
-"         ...........            ",
-"        ..@@@@@@@@@..           ",
-"        .@@@.......@@.          ",
-"        .@...######.@.          ",
-"        .@..##.####.....        ",
-"     .....####..####..  ..      ",
-"     .  .#####..#####.    .     ",
-"       ..#####..#####.    ..    ",
-"       .#####...#####..    .    ",
-"      ..#####.@.######...       ",
-"     . .#####.@.######. ..      ",
-"     . ..####.@..#####.  ..     ",
-"        ..##..@@.#####.   .     ",
-"         ....@@@..###..         ",
-"         ...@@@@@..#...         ",
-"        .. ..........  .        ",
-"       .     ..        .        ",
-"       .               .        ",
-"                       .        ",
-"                                ",
-"                                ",
-"                                ",
-"                                ",
-"                                " };
-//
-//static xpm_row_t const flyUp1[] = {
-//"196 196 950 2",
-//" c None",
-//". c #C1C1C1",
-//"+ c #323232",
-//"@ c #090909",
-//"# c #010101",
-//"$ c #161616",
-//"% c #9C9C9C",
-//[...]
-//" + @ # $ % ",
-//" & * = - ;
-//, ’ ) !~{ ] ^ / (_ : < ",
-//" [ } | |
-//| | | 1 2 3 4 5 6 7 8 9
-//0 a / | | b c d e f ] g h @ g i i i j k ",
-//[...]
-//}
-
-
-
-
-
-
-
-
-static const char * background[] = {
+/* XPM */
+static char * C:\Users\ut1\Desktop\MINIX_LCOM\MINIX_LCOM\shared\proj\WindowsXp255Color_xpm[] = {
 "1280 1024 255 2",
 "  	c #1C181C",
 ". 	c #171C0C",
@@ -1349,8 +1279,4 @@ static const char * background[] = {
 "s s ........X X j.j.j.j.n.j.j.j.j.j.n.n.n.n.n.n.n.j.j.j.n.n.n.n.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.j.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.j.n...+.+.+...V r h 2 P #.H F F F p H H p p o F Q Q Q -.S S S -.S S S S S [.[.[.^.#.#.#.^.S S S S S M S Q ` &.S y #.#.S S S S S S S S S S S S S S S S S S Q S #.#.S ).S M M S ).-.#.#.S Q S S S S M M S S S S S S S S S S S ).).-.-.-.-.S -.S -.S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S D } H S Q Q Q Q &.&.S M M M -.-.` ` &.S S S S S S M S S S S S S S M M M M S S S S S ^.^.S S Q S S M S S Q Q S M S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S Q S S S M M S S S ).` ` ).S -.S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S S p H H p F F H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H Q N N L F p F x x v o v L H H Q o Q H F F L F F p H D D D D D H D !.! G.G.%+%+G.z.r.z.z.z.r.r.r.z.z.r.g.r.z.G.G.z.G.G.G.G.r.r.z.z.z.z.r.r.g.g.z.z.r.g.r.r.g.g.z.z.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.r.g.g.g.g.g.g.r.r.r.r.r.r.r.r.g.g.g.r.r.r.g.g.g.g.g.g.r.r.r.g.g.g.g.g.g.g.g.g.g.g.^.^.^.^.g.g.g.",
 "s s s s ........................X X ..........n...X j.j.......n.n.n.n.j.j.j.j.j.n.n.n.n.n.n.n.n.n.n.n.j.j.j.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n...+.+.........+.+.+.s r r h W P M p p H p H H H H H p p p p p D D 7 7 D p p D D D D D g j j j 7 D D D D D D D D H p o p D D D D D D D D D D D D D D D D D D D D D p D g g p o D 7 D D p p g g D } D D D D 7 7 D D D p p p p p D D } p p D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D H H p D D D D D H } H H p p p p p p } D D } p p p p D D D D p p D D D p p p p D D D D D D D p p p D g g D p u p D 7 D } u } D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D p p p p D D D D D p } o o } p p D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D D H H H D D D D D H D H p p p p p H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H F F o p p p q q o o o p D D p p H H p p o o F H D D D D H H p D g @ G.|+G.G.r.r.r.r.z.z.z.z.z.r.r.r.g.g.z.z.z.r.r.z.z.z.r.g.r.r.z.r.r.g.g.g.G.G.g.g.g.g.7.7.z.z.r.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.g.r.r.g.g.g.g.g.g.g.r.r.g.g.g.g.g.g.g.g.g.g.^.^.^.^.^.^.^.g.",
 "h h +.+.s ..r r ..r r r r r ........s s ....s s ..X X X ..s s ....................................................+.+.+.+.s ..................s +.+.+.+.+.+...+.+.+.s ....s +.h h s r s h C !.H p p D D 7 7 7 7 D } p } } } D 7 g g D } } } } D } } 7 7 7 } } u D 7 D } } D D D } } u u } D D 7 7 D } D D D D D D D D D 7 7 7 } } } g g p o } 7 7 } p p g g } } D 7 D 7 g g 7 D } } } } } } } D } } } } } } } } } } } D } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } D D D } D } } } } } } } } } } } } } } } } } o o p 7 g < < g D D } } } } } } } } D } } } } } } } } } g g D } u } 7 7 7 } u u D 7 D } } } } } } } } } } D D D D D D D } D D D } } } } } } } } } } } } } } } 7 D } } u u u u } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } D D D D D D } } } } H } p p } p } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } p } } } } } } D p p ~ 7 } H p H D } } } } } p D D } 7 } D p o } %.d z.G.r.g.^.g.g.g.r.z.r.r.g.%.%.g.7.7.g.%.^.7.S ^.%.%.^.^.^.g.#.#.^.[.].^.P P %.^.#.^.-.{.%.P %.%.%.%.g.^.^.^.^.^.^.^.^.^.^.g.g.g.g.g.^.^.^.^.g.g.g.g.g.g.^.^.^.^.g.g.g.g.^.^.^.^.^.g.g.g.#.#.#.#.#.#.%.g.%.#.^.^.^.^.^.^.^.^.",
-"h h h h s s r r r r r r r r s r r r s s r r s ....r X X ..s s s s s s s ......s s s s s s s s s s s ..........s s +.+.+.+.+.s s s s s s s s s s +.+.+.+.+.s s +.+.+.s s s s h h h s s s h C ^.o } } } ~ ~ 7 ~ ~ ~ ~ } } } } } < < < ~ } } } ~ ~ } } ~ 7 ~ } u u ~ 7 ~ } } ~ ~ ~ ~ } u u u } ~ 7 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ } } < 7 } } ~ ~ ~ ~ } } < < ~ } ~ ~ ~ ~ < < 7 ~ } } } } } } } ~ ~ ~ } } ~ ~ } ~ ~ ~ ~ ~ ~ ~ ~ } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } ~ } } } u } } 7 < ! ! < ~ } } } } } } } } } } ~ ~ ~ ~ } } } } } < < ~ } u } ~ 7 ~ } u u ~ ~ ~ } } } } } } } } } } } ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ } } } } } } } } } } } } } } ~ ~ ~ } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } ~ ~ } } 7 7 } } < < ~ ~ ~ } ~ ~ } } } } } } } ~ } } } } u } ! P P %.j y M 7 g j j P %.%.j j #.y S S j j } o o p y 7 M D 7 y y M D p o D P P %.y j D o p j P j j j j j j y y y y y y y y y j j j j j y y y y j y y j y y y y y y #.#.#.y M D D M y j j j y j y y y j j j y y y y M M M y y y " };
-
-
-
-
+"h h h h s s r r r r r r r r s r r r s s r r s ....r X X ..s s s s s s s ......s s s s s s s s s s s ..........s s +.+.+.+.+.s s s s s s s s s s +.+.+.+.+.s s +.+.+.s s s s h h h s s s h C ^.o } } } ~ ~ 7 ~ ~ ~ ~ } } } } } < < < ~ } } } ~ ~ } } ~ 7 ~ } u u ~ 7 ~ } } ~ ~ ~ ~ } u u u } ~ 7 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ } } < 7 } } ~ ~ ~ ~ } } < < ~ } ~ ~ ~ ~ < < 7 ~ } } } } } } } ~ ~ ~ } } ~ ~ } ~ ~ ~ ~ ~ ~ ~ ~ } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } ~ } } } u } } 7 < ! ! < ~ } } } } } } } } } } ~ ~ ~ ~ } } } } } < < ~ } u } ~ 7 ~ } u u ~ ~ ~ } } } } } } } } } } } ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ } } } } } } } } } } } } } } ~ ~ ~ } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } } ~ ~ } } 7 7 } } < < ~ ~ ~ } ~ ~ } } } } } } } ~ } } } } u } ! P P %.j y M 7 g j j P %.%.j j #.y S S j j } o o p y 7 M D 7 y y M D p o D P P %.y j D o p j P j j j j j j y y y y y y y y y j j j j j y y y y j y y j y y y y y y #.#.#.y M D D M y j j j y j y y y j j j y y y y M M M y y y "};

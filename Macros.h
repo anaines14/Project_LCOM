@@ -42,11 +42,15 @@
 #define TIMER_0 0x40
 #define TIMER_FREQ 1193182              
 #define TIMER_LSB_MSB (TIMER_LSB | TIMER_MSB)
+#define TIMER_CTRL 0x43 /**< @brief Control register */
+#define TIMER_LSB     BIT(4)                  /**< @brief Initialize Counter LSB only */
+#define TIMER_MSB     BIT(5)                  /**< @brief Initialize Counter MSB only */
+
 
 //Screen size
-#define H_RES 1280
-#define V_RES 1024
-#define MODE 0x11B
+#define H_RES 800
+#define V_RES 600
+#define MODE 0x115
 
 //XPM
 #define XPM_BYTES_PER_PIXEL 3
