@@ -1,6 +1,6 @@
 #pragma once
 #include <lcom/lcf.h>
-#pragma once
+#include "Macros.h"
 
 int(setGraphicsMode)(uint16_t mode);
 int define_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step);

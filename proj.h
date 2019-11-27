@@ -6,4 +6,5 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "mainLoop.h"
+
 int(proj_main_loop)(int argc, char *argv[]);

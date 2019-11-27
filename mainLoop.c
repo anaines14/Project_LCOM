@@ -11,7 +11,7 @@
 #include "sprites.h"
 
 //GLOBAL KEYBOARD VARIABLES
-extern uint8_t status_byte, cmd, data, msB, lsB;
+extern uint8_t msB, lsB;
 extern bool success;
 
 //GLOBAL MOUSE VARIABLES
@@ -31,7 +31,6 @@ const int screeny = 864;
 int (game_start)() {
 	return interrupts();
 }
-
 
 int (interrupts)() {
 	int x_mouse = screenx / 2;
@@ -71,12 +70,12 @@ int (interrupts)() {
 	if (mouse_subscribe_int(&hook_id_mouse))
 		return 1;
 
-	//Setting graphics mode to 14C
-	setGraphicsMode(0x11B);
+	//Setting graphics mode to 14C	
+	setGraphicsMode(MODE);
 
-	Sprite fly;
-	fly = *create_sprite(flyUp1, 32, 32, 0, 0);
-	draw_sprite(&fly, video_mem);
+	Sprite *fly;
+	fly = create_sprite(flyUp1, 32, 32, 0, 0);
+	draw_sprite(fly, video_mem);
 
 	while ((lsB != ESC_BRKCD) || (msB != 0))
 	{
@@ -125,7 +124,6 @@ int (interrupts)() {
 						oneByteSc[0] = lsB;
 					}
 				}
-
 
 				if (msg.m_notify.interrupts & irq_mouse) //Mouse
 				{

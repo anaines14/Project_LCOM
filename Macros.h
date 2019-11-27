@@ -6,6 +6,7 @@
 #define TIMER0_IRQ 0
 #define MOUSE_IRQ 12
 
+
 //--Mouse--
 //Commands
 #define SET_STRAM_MODE 0xEA
@@ -37,15 +38,16 @@
 #define MSB_2B 0xE0
 #define ESC_BRKCD 0x81
 
-
-//--Other--
-#define DELAY_US 20000
-
-
 //Screen size
-#define H_RES 1152
-#define V_RES 864
+#define H_RES 1280
+#define V_RES 1024
+#define MODE 0x11B
 
 //XPM
 #define XPM_BYTES_PER_PIXEL 3
 #define SYSTEM_BYTES_PER_PIXEL 3
+#define BITS_PER_PIXEL 24
+
+
+//Other
+#define DELAY_US 20000

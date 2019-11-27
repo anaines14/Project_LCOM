@@ -4,4 +4,3 @@
 
 int (game_start)();
 int (interrupts)();
-

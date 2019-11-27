@@ -1,6 +1,6 @@
 #include "timer.h"
 #include "Macros.h"
-int hook_id;
+static int hook_id;
 int(timer_subscribe_int)(uint8_t *bit_no)
 {
     hook_id = (int)*bit_no;

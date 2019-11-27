@@ -150,7 +150,7 @@ int(send_command_to_mouse)(uint8_t command)
     return 0;
 }
 
-int hook_id;
+static int hook_id;
 int(mouse_subscribe_int)(uint8_t *bit_no) {
   hook_id = (int) *bit_no;
   sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id);
@@ -161,5 +161,4 @@ int(mouse_unsubscribe_int)() {
     if(sys_irqrmpolicy(&hook_id))
         return 1;
     return 0;
-  
 }

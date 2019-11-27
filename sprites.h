@@ -13,5 +13,3 @@ typedef struct {
 
 Sprite*(create_sprite)(const char *pic[], int x, int y, int xspeed, int yspeed);
 int (draw_sprite)(Sprite *sp, char *base);
-
-
