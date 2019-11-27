@@ -7,6 +7,11 @@
 #include "mouse.h"
 #include "VBE.h"
 #include "utils.h"
+#include "images.h"
+#include "sprites.h"
+
+
+
 
 //GLOBAL KEYBOARD VARIABLES
 extern uint8_t status_byte, cmd, data, msB, lsB;
@@ -21,10 +26,16 @@ extern uint32_t interrupt_counter;
 extern struct mouse_ev ev;
 extern uint16_t x_percorrido;
 
+//Global screen variables
+extern void *video_mem;
 const int screenx = 1152;
 const int screeny = 864;
+//extern struct Sprite;
+
 
 int (game_start)() {
+
+
 	return interrupts();
 }
 
@@ -33,6 +44,7 @@ int (game_start)() {
 int (interrupts)() {
 	int x_mouse = screenx / 2;
 	int y_mouse = screeny / 2;
+
 
 	int ipc_status, r;
 	message msg;
@@ -66,7 +78,22 @@ int (interrupts)() {
 		return 1;
 	if (mouse_subscribe_int(&hook_id_mouse))
 		return 1;
-	
+	//Setting graphics mode to 14C
+	setGraphicsMode(0x14C);
+
+	//DEBUG
+	//int counter = 0;
+
+	//char *fly_up_1 = flyUp1;
+	Sprite fly;
+	fly = *create_sprite(flyUp1, 32, 32, 0, 0);
+	draw_sprite(&fly, video_mem);
+
+	//xpm_row_t const flyGoingUp[] = flyUp;
+
+	//Sprite sp;
+
+
 	while (lsB != 0x81 || msB != 0)
 	{
 		if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0)
@@ -78,7 +105,7 @@ int (interrupts)() {
 		{ /* received notification */
 			switch (_ENDPOINT_P(msg.m_source))
 			{
-			case HARDWARE: /* hardware _cou notification */
+			case HARDWARE:                                /* hardware _cou notification */
 				if (msg.m_notify.interrupts & irq_timer0) //TIMER0
 				{
 					//Debug
@@ -171,8 +198,8 @@ int (interrupts)() {
 	//Disable data reporting
 	if (send_command_to_mouse(DISABLE_DATA_REPORTING))
 		return 1;
-	//if (vg_exit())
-	//	return 1;
+    if (vg_exit())
+		return 1;
 
 
 	return 0;

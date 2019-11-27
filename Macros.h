@@ -41,10 +41,13 @@
 #define DELAY_US 20000
 
 
-//BMP file format
+//Screen size
+#define H_RES 1152
+#define V_RES 864
 
 
 
-//Temporary
-#define BMP_BYTES_PER_PIXEL 4
+
+//XPM
+#define XPM_BYTES_PER_PIXEL 4
 
