@@ -1,7 +1,7 @@
 #include <lcom/lcf.h>
 
 #include "sprites.h"
-
+#include "enemies.h"
 
 
 Enemy *setEnemy(Sprite *sp, int dir, int tp) {

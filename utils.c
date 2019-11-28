@@ -19,3 +19,15 @@ int (util_sys_inb)(int port, uint8_t *value) {
   *value = (uint8_t) val; //Dereferencia��o do pointer
   return 0;
 }
+
+int minInt(int a, int b) {
+	if (a > b)
+		return b;
+	return a;
+}
+
+int maxInt(int a, int b) {
+	if (a > b)
+		return a;
+	return b;
+}

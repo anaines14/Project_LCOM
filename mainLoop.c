@@ -9,7 +9,7 @@
 #include "utils.h"
 #include "images.h"
 #include "sprites.h"
-#include "enimies.h"
+#include "enemies.h"
 
 //GLOBAL KEYBOARD VARIABLES
 extern uint8_t msB, lsB;

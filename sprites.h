@@ -13,3 +13,7 @@ typedef struct {
 
 Sprite*(create_sprite)(const char *pic[], int x, int y, int xspeed, int yspeed);
 int (draw_sprite)(Sprite *sp, char *base);
+void (destroy_sprite)(Sprite *sp);
+
+void (set_sprite_position)(Sprite *sp, int xpos, int ypos);
+

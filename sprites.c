@@ -49,10 +49,14 @@ int (draw_sprite)(Sprite *sp, char *base){
 
 	int endy = (sp->height < ((V_RES - sp->y)))? sp->height : (V_RES - sp->y);
 	int endx = (sp->width < ((H_RES - sp->x)))? sp->width : (H_RES - sp->x);
+	
+	int starty = maxInt(0, -sp->y);
+	int startx = maxInt(0, -sp->x);
 
-	for (int i = 0; i < endy; i++) {
+
+	for (int i = starty; i < endy; i++) {
 		pointer = base + ((((i + sp->y) * H_RES) + sp->x) * 3); //A posi��o de y * length do ecr� + a posi��o x, tudo * bits_por_pixel do ecra
-		for (int j = 0; j < endx; j++) {
+		for (int j = startx; j < endx; j++) {
 			//Making the color
 			for (int k = 0; k < XPM_BYTES_PER_PIXEL; k++) {
 				color[k] = sp->map[(i * XPM_BYTES_PER_PIXEL * sp->width) + ((j * XPM_BYTES_PER_PIXEL) + k)];
