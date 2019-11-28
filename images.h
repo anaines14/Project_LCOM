@@ -2,7 +2,6 @@
 #include <lcom/lcf.h>
 #include <lcom/xpm.h>
 
-//static xpm_row_t const flyUp1[] = {
 static const char * flyUp1[] = {
 	"32 32 5 1",
 " 	c #FF0080",
@@ -41,26 +40,8 @@ static const char * flyUp1[] = {
 "                                ",
 "                                ",
 "                                ",
-"                                " };
-//
-//static xpm_row_t const flyUp1[] = {
-//"196 196 950 2",
-//" c None",
-//". c #C1C1C1",
-//"+ c #323232",
-//"@ c #090909",
-//"# c #010101",
-//"$ c #161616",
-//"% c #9C9C9C",
-//[...]
-//" + @ # $ % ",
-//" & * = - ;
-//, ’ ) !~{ ] ^ / (_ : < ",
-//" [ } | |
-//| | | 1 2 3 4 5 6 7 8 9
-//0 a / | | b c d e f ] g h @ g i i i j k ",
-//[...]
-//}
+"                                " 
+};
 
 
 

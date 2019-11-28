@@ -2,38 +2,27 @@
 #include "Macros.h"
 
 int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
-	if (freq < 19  ||  freq > TIMER_FREQ){ 
-	  printf("Invalid frequency");
-		return 1;
-	}
-	
   uint8_t var = 0;
   timer_get_conf(timer, &var);
- 
-  uint8_t counterInitMode = (var >> 4) & 3;
 
-  if (timer > 2 || timer < 0) {
-	printf("Invalid timer");
-    return 1; 
-  }
-
-  if (counterInitMode == 0) 
+  if (timer > 2 || timer < 0) 
     return 1;
 
   //freq = valor que colocamos sys_outb / 1193181
   uint16_t time_value = TIMER_FREQ / freq;
-
+  
   var = var | TIMER_LSB_MSB;
-  uint8_t lsb = 0;
-  uint8_t msb = 0;
-
-  util_get_LSB(time_value, &lsb);
-  util_get_MSB(time_value, &msb);
-
+  
+  uint8_t LSB = 0;
+  uint8_t MSB = 0;
+  
+  util_get_LSB(time_value, &LSB);
+  util_get_MSB(time_value, &MSB);
+  
   sys_outb(TIMER_CTRL, var);
-  sys_outb((timer + TIMER_0), lsb);
-  sys_outb((timer + TIMER_0), msb);
-
+  sys_outb((timer + TIMER_0), MSB);
+  sys_outb((timer + TIMER_0), LSB);
+ 
   return 0;
 }
 

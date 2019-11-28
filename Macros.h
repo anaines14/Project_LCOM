@@ -42,9 +42,10 @@
 #define TIMER_0 0x40
 #define TIMER_FREQ 1193182              
 #define TIMER_LSB_MSB (TIMER_LSB | TIMER_MSB)
-#define TIMER_CTRL 0x43 /**< @brief Control register */
-#define TIMER_LSB     BIT(4)                  /**< @brief Initialize Counter LSB only */
-#define TIMER_MSB     BIT(5)                  /**< @brief Initialize Counter MSB only */
+#define TIMER_CTRL 0x43
+#define TIMER_LSB BIT(4)
+#define TIMER_MSB BIT(5)     
+#define FPS 60             
 
 
 //Screen size
