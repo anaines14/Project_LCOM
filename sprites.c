@@ -39,6 +39,11 @@ void (destroy_sprite)(Sprite *sp) {
 	// should do this @ the caller
 }
 
+void setSpritePosition(Sprite *sp, int xpos, int ypos) {
+    sp->x = xpos;
+    sp->y = ypos;
+}
+
 int (draw_sprite)(Sprite *sp, char *base){
 	if (sp == NULL) {
 		return 1;

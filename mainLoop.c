@@ -160,7 +160,6 @@ int (interrupts)() {
 					oneByteSc[0] = lsB;
 				}
 
-
 			}
 
 			if (msg.m_notify.interrupts & irq_mouse) //Mouse
