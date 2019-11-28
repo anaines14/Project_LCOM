@@ -39,7 +39,7 @@ void (destroy_sprite)(Sprite *sp) {
 	// should do this @ the caller
 }
 
-void setSpritePosition(Sprite *sp, int xpos, int ypos) {
+void set_sprite_position(Sprite *sp, int xpos, int ypos) {
     sp->x = xpos;
     sp->y = ypos;
 }
