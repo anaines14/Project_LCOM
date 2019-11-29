@@ -1,11 +1,15 @@
 #pragma once
+
 #include "sprites.h"
 
 typedef struct {
-	Sprite **spr;		
+	Sprite spr;		///< pointer to first Sprite, the one with overall properties
+	int aspeed;		///< animation speed 
+	int cur_aspeed; ///< current animation speed 
 	int num_fig; 	///< number of pixmaps 
 	int cur_fig; 	///< current pixmap 
-	//int type;		//Type of enemy
+	char **map;     ///< pointer to array of each AnimSprite pixmaps
+	int type;		//Type of enemy
 } Enemy;
 
 /*
@@ -15,7 +19,4 @@ typedef struct {
 	int type; //Type of enemy
 }Enemy;*/
 
-Enemy *setEnemy();
-int draw_Enemy(Enemy* en, char *base);
-int move_Enemy(Enemy* en, char *base);
-void destroy_enemy(Enemy *en);
+Enemy *setEnemy(Sprite *sp, int dir, int tp);

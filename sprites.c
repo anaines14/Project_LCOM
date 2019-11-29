@@ -1,5 +1,4 @@
 #include <lcom/lcf.h>
-#include <stdarg.h>
 #include "sprites.h"
 
 Sprite *(create_sprite)(const char *pic[], int x, int y,int xspeed, int yspeed) {
@@ -40,9 +39,17 @@ void (destroy_sprite)(Sprite *sp) {
 	// should do this @ the caller
 }
 
-void set_sprite_position(Sprite *sp, int xpos, int ypos) {
-    sp->x = xpos;
-    sp->y = ypos;
+void (set_sprite_position)(Sprite *sp, int xpos, int ypos) {
+	sp->x = xpos;
+	sp->y = ypos;
+}
+
+void (set_sprite)(Sprite *sp, const char* pic[]) {
+	//*sp->map = (uint8_t ) (*pic);
+	//realloc(sp->map, sizeof(pic));
+	xpm_image_t img;
+	sp->map = xpm_load(pic, XPM_8_8_8, &img);
+	//memcpy(sp->map, pic, strlen(*pic));
 }
 
 int (draw_sprite)(Sprite *sp, char *base){
