@@ -1,4 +1,5 @@
 #include <lcom/lcf.h>
+#include <stdarg.h>
 #include "sprites.h"
 
 Sprite *(create_sprite)(const char *pic[], int x, int y,int xspeed, int yspeed) {

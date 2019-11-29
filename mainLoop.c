@@ -74,7 +74,7 @@ int (game_start)() {
 int (interrupts)() {
   int ipc_status, r;
   message msg;
-
+ 
   //Timer
   uint8_t hook_id_timer0 = TIMER0_IRQ;
   int irq_timer0 = BIT(hook_id_timer0);
@@ -108,12 +108,10 @@ int (interrupts)() {
 
   Sprite *flyspr;
   flyspr = create_sprite(flyUp1, 32, 32, 0, 1);
-  draw_sprite(flyspr, memBuffer);
   //Enemy *fly = setEnemy(flyspr, 180, 0);
 
   Sprite *cursor;
   cursor = create_sprite(Cursor, x_mouse, y_mouse, 0, 0);
-  draw_sprite(cursor, memBuffer);
 
   while ((lsB != ESC_BRKCD) || (msB != 0))
   {
@@ -130,32 +128,32 @@ int (interrupts)() {
 	    	if (msg.m_notify.interrupts & irq_timer0) //TIMER0
 			{
 				draw_sprite(bg, memBuffer);
-					draw_sprite(flyspr, memBuffer);
+				draw_sprite(flyspr, memBuffer);
 
-					if (true_x_mouse > (H_RES << 1)) {
-						true_x_mouse = (H_RES << 1);
-					}
-					else if (true_x_mouse < 0) {
-						true_x_mouse = 0;
-					}
-					if (true_y_mouse > (V_RES << 1)) {
-						true_y_mouse = (V_RES << 1);
-					}
-					else if (true_y_mouse < 0) {
-						true_y_mouse = 0;
-					}
-					x_mouse = ((true_x_mouse + 1) >> 1);
-					y_mouse = ((true_y_mouse + 1) >> 1);
-					set_sprite_position(cursor, x_mouse, y_mouse);
-					draw_sprite(cursor, memBuffer);
-					memcpy(video_mem, memBuffer, H_RES * V_RES * SYSTEM_BYTES_PER_PIXEL * sizeof(uint8_t));
-					//Mover os objetos
-					flyspr->x += flyspr->xspeed;
-					flyspr->y += flyspr->yspeed;
-					if (flyspr->x > 0 || flyspr->y > 0 || flyspr->x > H_RES || flyspr->y > V_RES) {
-						destroy_sprite(flyspr);
-					}
-					//Draw sprites, in order of priority
+				if (true_x_mouse > (H_RES << 1)) {
+					true_x_mouse = (H_RES << 1);
+				}
+				else if (true_x_mouse < 0) {
+					true_x_mouse = 0;
+				}
+				if (true_y_mouse > (V_RES << 1)) {
+					true_y_mouse = (V_RES << 1);
+				}
+				else if (true_y_mouse < 0) {
+					true_y_mouse = 0;
+				}
+				x_mouse = ((true_x_mouse + 1) >> 1);
+				y_mouse = ((true_y_mouse + 1) >> 1);
+				set_sprite_position(cursor, x_mouse, y_mouse);
+				draw_sprite(cursor, memBuffer);
+				memcpy(video_mem, memBuffer, H_RES * V_RES * SYSTEM_BYTES_PER_PIXEL * sizeof(uint8_t));
+				//Mover os objetos
+				flyspr->x += flyspr->xspeed;
+				flyspr->y += flyspr->yspeed;
+				if (flyspr->x > 0 || flyspr->y > 0 || flyspr->x > H_RES || flyspr->y > V_RES) {
+					destroy_sprite(flyspr);
+				}
+				//Draw sprites, in order of priority
 			}
 			if (msg.m_notify.interrupts & irq_kbd) //KEYBOARD
 			{
